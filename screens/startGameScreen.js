@@ -1,6 +1,7 @@
 import { View, TextInput, StyleSheet, Alert } from 'react-native'
 import PrimaryButton from '../components/PrimaryButton'
 import { useState } from 'react';
+import colors from '../constans/colors';
 
 
 export default function StartGameScreen({ pickedNumerHendler }) {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 16,
         marginTop: 100,
-        backgroundColor: '#ea0e0eb2',
+        backgroundColor: colors.primaryLight,
         width: '95%',
         borderRadius: 20,
         elevation: 10,
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     },
     numberInput: {
-        color: '#fffffffe',
+        color: colors.white,
         fontSize: 33,
         fontWeight: "bold",
         alignContent: 'center',
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 8,
         borderBottomWidth: 4,
-        borderBottomColor: '#fffffffe',
+        borderBottomColor: colors.white,
 
     }
 })

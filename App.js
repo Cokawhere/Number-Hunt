@@ -1,18 +1,33 @@
-import { StyleSheet, View, ImageBackground } from 'react-native';
+import { ImageBackground } from 'react-native';
 import StartGameScreen from './screens/startGameScreen';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import GameScreen from './screens/GameScreen';
+import GameOverScreen from './screens/GameOverScreen';
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [rounds, setRounds] = useState([]);
+
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
   }
+  function returnToHome() {
+    setUserNumber(null);
+    setIsGameOver(false);
+  }
+  function gameOverHandle(roundsList) {
+    setIsGameOver(true);
+    setRounds(roundsList)
+  }
+
   let screen = <StartGameScreen pickedNumerHendler={pickedNumberHandler} />
-  if (userNumber) {
-    screen = <GameScreen chosenNumber={userNumber} />
+  if (userNumber && !isGameOver) {
+    screen = <GameScreen chosenNumber={userNumber} gameOverHandle={gameOverHandle} />
+  } else if (userNumber && isGameOver) {
+    screen = <GameOverScreen rounds={rounds} returnToHome={returnToHome} />
   }
 
   return (
