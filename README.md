@@ -6,12 +6,39 @@ The phone uses binary search to guess your secret number (1-99) in the fewest ro
 Perfect beginner project to showcase core React Native concepts.
 
 ## Screenshots
+<table>
+  <tr>
+    <td align="center">
+      <img src="./assets/screenshots/homescreen.png" width="300" alt="Home Screen"/>
+      <br><sub><b>Home Screen</b></sub>
+    </td>
+    <td align="center">
+      <img src="./assets/screenshots/homescreeen-alert.png" width="300" alt="Invalid Input Alert"/>
+      <br><sub><b>Invalid Input Alert</b></sub>
+    </td>
+    <td align="center">
+      <img src="./assets/screenshots/game-screen.png" width="300" alt="Game Screen"/>
+      <br><sub><b>Game Screen</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./assets/screenshots/gamescreen-alert.png" width="300" alt="Cheat Detection Alert"/>
+      <br><sub><b>Cheat Detection Alert</b></sub>
+    </td>
+    <td align="center">
+      <img src="./assets/screenshots/gameoverscreen.png" width="300" alt="Game Over Screen"/>
+      <br><sub><b>Game Over Screen</b></sub>
+    </td>
+    <td align="center">
+      <!-- Empty cell to balance if needed -->
+      <img src="https://via.placeholder.com/300x500/ffffff/000000?text=+" width="300" alt="Placeholder"/>
+      <br><sub><b>More coming soon</b></sub>
+    </td>
+  </tr>
+</table>
 
-![Start Screen](./assets/screenshots/homescreen.png)
-![Start Screen Alert](./assets/screenshots/homescreeen-alert.png)
-![Game Screen](./assets/screenshots/game-screen.png)
-![Game Screen alert](./assets/screenshots/gamescreen-alert.png)
-![Game Over Screen](./assets/screenshots/gameoverscreen.png)
+<p align="center"><i>Screenshots taken on Android device – clean UI with gradient & dice background 🎲</i></p>
 
 ## Features 
 
@@ -40,6 +67,7 @@ This simple app covers essential React Native fundamentals:
 - React Native
 - Expo (expo-linear-gradient)
 - Pure JavaScript (no external state libraries)
+
 
 
 
