@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Alert } from 'react-native'
 import colors from '../constans/colors'
 import { useState, useEffect } from 'react'
 import PrimaryButton from '../components/PrimaryButton';
+import CustomAlert from '../components/alert';
 
 
 export default function GameScreen({ chosenNumber, gameOverHandle }) {
@@ -9,21 +10,22 @@ export default function GameScreen({ chosenNumber, gameOverHandle }) {
     const [currentGuess, setCurrentGuess] = useState(0);
     const [minBound, setMinBound] = useState(1);
     const [maxBound, setMaxBound] = useState(99);
+    const [alertVisible, setAlertVisible] = useState(false);
+
 
     function handleUserDirection(direction) {
         if (direction === 'correct' && chosenNumber === currentGuess) {
             gameOverHandle(rounds);
             return;
         } else if (direction === 'correct' && chosenNumber != currentGuess) {
-            Alert.alert('Hey sweetie🙄', "That's not right ...let's play fair okay?",
-                [{ text: "Okay", style: "cancel" }]);
+            setAlertVisible(true);
             return;
         }
         if ((direction === 'lower' && chosenNumber > currentGuess) ||
             (direction === 'higher' && chosenNumber < currentGuess)
         ) {
-            Alert.alert('Hey sweetie🙄', "That's not right ...let's play fair okay?",
-                [{ text: "Okay", style: "cancel" }]);
+            setAlertVisible(true);
+
             return;
         }
         if (direction === 'lower') {
@@ -44,16 +46,26 @@ export default function GameScreen({ chosenNumber, gameOverHandle }) {
     }, [])
 
     return (
-        <View style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}>
-            <Text style={styles.text}>{currentGuess}</Text>
-            <PrimaryButton onPress={() => handleUserDirection('lower')} >Lower</PrimaryButton>
-            <PrimaryButton onPress={() => handleUserDirection('higher')} >Higher</PrimaryButton>
-            <PrimaryButton onPress={() => handleUserDirection('correct')} >Correct</PrimaryButton>
-        </View>
+        <>
+            <CustomAlert
+                visible={alertVisible}
+                title='Hey sweetie'
+                message="That's not right ...let's play fair okay?"
+                onConfirm={() => setAlertVisible(false)}
+                onCancel={() => setAlertVisible(false)}
+            />
+            <View style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+
+                <Text style={styles.text}>{currentGuess}</Text>
+                <PrimaryButton onPress={() => handleUserDirection('lower')} >Lower</PrimaryButton>
+                <PrimaryButton onPress={() => handleUserDirection('higher')} >Higher</PrimaryButton>
+                <PrimaryButton onPress={() => handleUserDirection('correct')} >Correct</PrimaryButton>
+            </View>
+        </>
     )
 }
 const styles = StyleSheet.create({
