@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={['#f5f5f5ff', '#f02323fe']} style={{ flex: 1, }}>
+      <LinearGradient colors={['#ec6161fe', '#f64f4ffe', '#f5f5f5ff',]} style={{ flex: 1, }}>
         <ImageBackground source={require('./assets/dice.jpeg')} resizeMode='cover'
           style={{ flex: 1, }} imageStyle={{ opacity: .4 }} >
           {screen}
