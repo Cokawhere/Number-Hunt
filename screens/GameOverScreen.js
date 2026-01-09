@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         height: 300,
         borderRadius: 100,
         overflow: "hidden",
-        marginTop: "20%",
+        marginTop: "40%",
     },
     imageStyle: {
         width: "100%",
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     buttonMargin: {
         width: 200,
         height: 50,
-        marginTop: "50%",
+        marginTop: "10%",
         borderRadius: 10,
     },
 });
