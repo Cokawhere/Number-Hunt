@@ -32,8 +32,7 @@ Perfect beginner project to showcase core React Native concepts.
     </td>
     <td align="center">
       <!-- Empty cell to balance if needed -->
-      <img src="https://via.placeholder.com/300x500/ffffff/000000?text=+" width="300" alt="Placeholder"/>
-      <br><sub><b>More coming soon</b></sub>
+     
     </td>
   </tr>
 </table>
@@ -67,6 +66,7 @@ This simple app covers essential React Native fundamentals:
 - React Native
 - Expo (expo-linear-gradient)
 - Pure JavaScript (no external state libraries)
+
 
 
 
