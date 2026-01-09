@@ -10,7 +10,7 @@ Perfect beginner project to showcase core React Native concepts.
 ![Start Screen](./assets/screenshots/homescreen.png)
 ![Start Screen Alert](./assets/screenshots/homescreeen-alert.png)
 ![Game Screen](./assets/screenshots/game-screen.png)
-![Game Screen alert]([./assets/screenshots/game-screen's-alert.png](https://github.com/Cokawhere/Number-Hunt/blob/main/assets/screenshots/gamescreen's-alert.png))
+![Game Screen alert](./assets/screenshots/game-screen's-alert.png)
 ![Game Over Screen](./assets/screenshots/gameoverscreen.png)
 
 ## Features 
@@ -40,5 +40,6 @@ This simple app covers essential React Native fundamentals:
 - React Native
 - Expo (expo-linear-gradient)
 - Pure JavaScript (no external state libraries)
+
 
 
