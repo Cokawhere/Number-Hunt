@@ -1,50 +1,59 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native'
-import Guess from '../components/guess'
-import colors from '../constans/colors';
-import PrimaryButton from '../components/PrimaryButton';
+import { View, Text, Image, StyleSheet } from "react-native";
+import colors from "../constans/colors";
+import PrimaryButton from "../components/PrimaryButton";
 
-export default function GameOverScreen({ rounds, returnToHome }) {
+export default function GameOverScreen({ rounds, returnToHome, userNumber }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Game Over 🎉</Text>
-            <Text style={styles.subtitle}>I guessed your number in {rounds.length} rounds</Text>
-            <FlatList data={rounds} renderItem={({ item }) => {
-                return <Guess rounds={item} />;
-            }}>
-            </FlatList>
-            <PrimaryButton onPress={returnToHome}>Home</PrimaryButton>
+            <View style={styles.imageContainer}>
+                <Image
+                    style={styles.imageStyle}
+                    resizeMode="cover"
+                    source={require("../assets/7.jpeg")}
+                />
+            </View>
+            <Text style={styles.subtitle}>
+                Your phone needed
+                <Text style={{ color: "black" }}> {rounds.length}</Text>
+                rounds to guess the number{" "}
+                <Text style={{ color: "black" }}>{userNumber}</Text>
+            </Text>
+            <PrimaryButton onPress={returnToHome} morestyle={styles.buttonMargin}>
+                Start a New Game
+            </PrimaryButton>
         </View>
-    )
+    );
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-
-    },
-    title: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        marginVertical: 20,
-        color: colors.white,
-        textAlign: "center",
-        backgroundColor: colors.primaryLight,
-        margin: 10,
-        padding: 5,
-        borderWidth: 1,
-        borderColor: colors.white,
-        borderRadius: 12,
-        width: '90%'
+        alignItems: "center",
     },
     subtitle: {
         fontSize: 24,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         marginVertical: 15,
-        backgroundColor: colors.white,
-        width: '99%',
-        padding:5,
-        borderRadius:10,
-        textAlign:'center'
+        width: "99%",
+        padding: 5,
+        textAlign: "center",
+        color: colors.white,
+    },
+    imageContainer: {
+        width: 300,
+        height: 300,
+        borderRadius: 100,
+        overflow: "hidden",
+        marginTop: "20%",
+    },
+    imageStyle: {
+        width: "100%",
+        height: "100%",
+        borderRadius: 200,
+    },
+    buttonMargin: {
+        width: 200,
+        height: 50,
+        marginTop: "50%",
+        borderRadius: 10,
     },
 });

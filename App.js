@@ -17,6 +17,7 @@ export default function App() {
   function returnToHome() {
     setUserNumber(null);
     setIsGameOver(false);
+    setRounds([]);
   }
   function gameOverHandle(roundsList) {
     setIsGameOver(true);
@@ -27,13 +28,13 @@ export default function App() {
   if (userNumber && !isGameOver) {
     screen = <GameScreen chosenNumber={userNumber} gameOverHandle={gameOverHandle} />
   } else if (userNumber && isGameOver) {
-    screen = <GameOverScreen rounds={rounds} returnToHome={returnToHome} />
+    screen = <GameOverScreen rounds={rounds} returnToHome={returnToHome} userNumber={userNumber} />
   }
 
   return (
     <LinearGradient colors={['#f5f5f5ff', '#f02323fe']} style={{ flex: 1, }}>
       <ImageBackground source={require('./assets/dice.jpeg')} resizeMode='cover'
-        style={{ flex: 1, }} imageStyle={{ opacity: .6 }} >
+        style={{ flex: 1, }} imageStyle={{ opacity: .4 }} >
         <SafeAreaView style={{ flex: 1, }}>
           {screen}
         </SafeAreaView>
