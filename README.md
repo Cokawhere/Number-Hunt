@@ -30,10 +30,7 @@ Perfect beginner project to showcase core React Native concepts.
       <img src="./assets/screenshots/gameoverscreen.png" width="300" alt="Game Over Screen"/>
       <br><sub><b>Game Over Screen</b></sub>
     </td>
-    <td align="center">
-      <!-- Empty cell to balance if needed -->
-     
-    </td>
+  
   </tr>
 </table>
 
@@ -66,6 +63,7 @@ This simple app covers essential React Native fundamentals:
 - React Native
 - Expo (expo-linear-gradient)
 - Pure JavaScript (no external state libraries)
+
 
 
 
